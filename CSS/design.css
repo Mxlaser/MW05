@@ -1,0 +1,253 @@
+body[data-theme="light"]{
+  --hf-bg-color : #2874a6;
+  --hf-text-color : white;
+  --n-bg-color : #2874a6;
+  --n-text-color : white;
+  --sa-title-color : #2874a6;
+  --sa-text-color : black;
+  --sa-nb-color : #2874a6;
+  --sa-bg-color : white;
+}
+
+body[data-theme="dark"]{
+  --hf-bg-color : #262626;
+  --hf-text-color : white;
+  --n-bg-color : #262626;
+  --n-text-color : white;
+  --sa-title-color : white;
+  --sa-text-color : white;
+  --sa-nb-color : #ffad33;
+  --sa-bg-color : #333333;
+}
+
+/*---Body---*/
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+}
+
+/*---Header---*/
+header, footer {
+  background-color: var(--hf-bg-color);
+  color: var(--hf-text-color);
+}
+
+header h1 {
+  margin : 10px 0;
+  padding-top: 0px;
+  font-size: 1.5rem;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+header img {
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
+    header img {
+        display: block;
+        float: right;
+        margin: 10px;
+        height: 50px;
+        padding: 0;
+    }
+}
+
+/*---Barre de nav---*/
+nav {
+  padding: 0 20px;
+  background-color: var(--n-bg-color);
+  color: var(--n-text-color);
+}
+
+nav div {
+  text-align: center;
+}
+
+nav a {
+  font-size: 20px;
+  color: var(--n-text-color);
+  margin: 0px 0px;
+  padding: 0 10px;
+  font-variant-caps: small-caps;
+  text-decoration: none;
+}
+
+nav div:hover {
+  border-bottom: 2px solid var(--n-text-color);
+  transition-duration: 0.3s;
+}
+
+/*---Section---*/
+section, aside {
+  background-color: var(--sa-bg-color);
+  color: var(--sa-text-color);
+  padding: 10px;
+}
+
+section h1, aside h1 {
+  color: var(--sa-title-color)
+}
+
+section h2, aside h2 {
+  color: var(--sa-title-color);
+  padding-left: 30px;
+  text-align: center;
+  margin: 50px 0;
+  font-size: 35px;
+  font-weight: lighter;
+  font-variant-caps: small-caps;
+}
+
+section img#imgdronetello {
+  width: 100%;
+}
+
+@media screen and (orientation: portrait) {
+    section img#imgdronetello {
+        float: none;
+        margin: 0;
+        width: 100%;
+    }
+}
+
+div.videos {
+  display: inline-flex;
+}
+
+video {
+  width: 50%;
+  margin: 5px;
+}
+
+/*---Gestion colonnes images et texte---*/
+section div.deux_colonnes {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+@media screen and (orientation: portrait) {
+    section div.deux_colonnes {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+section div.colonne_texte {
+    margin: 10px 30px;
+}
+
+section div.quatre_colonnes {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+@media screen and (orientation: portrait) {
+    section div.quatre_colonnes {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+section div.quatre_colonnes p {
+    text-align: center;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+section div.quatre_colonnes span.evidence {
+    font-size: 26px;
+    color: var(--sa-nb-color);
+    font-weight: lighter;
+    font-variant-caps: small-caps;
+
+}
+
+/*---Aside---*/
+aside {
+  border-width: 3px;
+  border-style: solid;
+  border-image:
+    linear-gradient(
+      to bottom,
+      var(--hf-bg-color),
+      white,
+      var(--hf-bg-color)
+    ) 1 100%;
+    padding: 10px;
+}
+
+aside #debutStage {
+  font-size: 1.7em;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+aside a {
+  font-size: 1rem;
+  color: var(--sa-text-color);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#compteurJours, #compteurHeures, #compteurMinutes, #compteurSecondes {
+  display: inline-grid;
+  padding: 12px 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: var(--n-bg-color);
+  color: white;
+  font-size: 2em;
+  font-family: monospace;
+}
+
+/*---Footer---*/
+footer div {
+  margin: 5px 0 0 30px;
+  padding: 0;
+}
+
+footer h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: 400;
+	  font-variant-caps: small-caps;
+    color: var(--hf-text-color);
+}
+
+footer a {
+  display: block;
+  margin: 5px;
+  padding:0;
+  font-size: 20px;
+  font-weight: 100;
+  color: var(--hf-text-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  border-bottom: 2px solid var(--hf-text-color);
+  transition-duration: 0.3s;
+}
+
+#dark_light {
+  padding: 12px 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background-color: var(--n-bg-color);
+  color: white;
+}
+
+@media screen and (orientation: portrait) {
+  nav div {
+    text-align: left;
+    padding: 30px 0 30px 0;
+    font-size: 30px;
+  }
+
+  nav a {
+    font-size: 30px;
+    font-variant: small-caps;
+    text-decoration: none;
+  }
+}

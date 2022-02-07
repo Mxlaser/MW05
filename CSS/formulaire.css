@@ -1,0 +1,102 @@
+body[data-theme="light"]{
+  --hf-bg-color : #2874a6;
+  --hf-text-color : white;
+  --n-bg-color : #2874a6;
+  --n-text-color : white;
+  --sa-title-color : #2874a6;
+  --sa-text-color : black;
+  --sa-bg-color : white;
+}
+
+body[data-theme="dark"]{
+  --hf-bg-color : #262626;
+  --hf-text-color : white;
+  --n-bg-color : #262626;
+  --n-text-color : white;
+  --sa-title-color : white;
+  --sa-text-color : white;
+  --sa-bg-color : #333333;
+}
+
+/*---Body---*/
+body {
+  width:400px;
+  margin: 50px auto;
+  background-color: var(--sa-bg-color)
+}
+
+form {
+  margin:auto;
+}
+
+label, input {
+  display: block;
+  font-size: 1em;
+  width: 400px;
+  color : var(--sa-text-color);
+}
+
+input {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid grey;
+    border-radius: 10px;
+    color: -internal-light-dark(var(--sa-text-color), white);
+}
+
+h1 {
+  text-align: center;
+  color: var(--sa-title-color);
+}
+
+p {
+  color: var(--sa-text-color);
+}
+
+/*---Classes rouge et vert---*/
+.rouge {
+  color: red;
+}
+
+.vert {
+    color: green;
+}
+
+/* Modification de l'input valider */
+#valider {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--n-bg-color);
+  color: white;
+}
+
+/*---Footer---*/
+footer {
+  padding: 20px;
+}
+
+footer a {
+  display: block;
+  margin: 5px;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 100;
+  color: var(--sa-text-color);
+  text-decoration: none;
+  text-align: center;
+}
+
+footer a:hover {
+  border-bottom: 2px solid var(--sa-text-color);
+  transition-duration: 0.3s;
+}
+
+#dark_light{
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--n-bg-color);
+  color: white;
+}

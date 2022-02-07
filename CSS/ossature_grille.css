@@ -1,0 +1,80 @@
+/* Attribution des zones */
+header {
+  grid-area: head;
+}
+
+nav {
+  grid-area: nav;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+
+section {
+  grid-area: section;
+}
+
+aside {
+  grid-area: aside;
+}
+
+footer {
+  grid-area: foot;
+}
+
+/*---Body---*/
+body {
+  margin: 0 20px 0 20px;
+  height: auto;
+  display: grid;
+  grid-template-areas : "head head"
+  						          "nav nav"
+                        "section aside"
+                        "foot foot";
+  grid-template-rows: 80px 40px minmax(757px, auto) auto;
+  grid-template-columns: 1fr 25%;
+}
+
+nav {
+	display: grid;
+	grid-template-columns: repeat(4, 130px);
+	grid-template-rows: auto;
+	align-items: center;
+	column-gap: 50px;
+}
+
+footer {
+	padding: 5px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	column-gap: 50px;
+}
+
+/* Zone réservée pour les écrans inférieurs à 800px de large */
+@media screen and (orientation: portrait) {
+  body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 80px auto minmax(400px, auto) auto;
+    grid-template-areas: "head"
+                         "nav"
+                         "section"
+                         "foot";
+  }
+  /* Ne pas afficher aside et nav */
+  aside, nav {
+    display: none;
+  }
+
+  nav {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4,1fr);
+  }
+
+  footer {
+		padding: 5px;
+		display: grid;
+		grid-template-columns: 1fr;
+		column-gap: 50px;
+		grid-template-rows: repeat(3,auto);
+	}
+}

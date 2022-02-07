@@ -1,0 +1,261 @@
+body[data-theme = "light"]{
+  --hf-bg-color : #2874a6;
+  --hf-text-color : white;
+  --n-bg-color : #2874a6;
+  --n-text-color : white;
+  --sa-title-color : #2874a6;
+  --sa-text-color : black;
+  --sa-bg-color : white;
+}
+
+body[data-theme = "dark"]{
+  --hf-bg-color : #262626;
+  --hf-text-color : white;
+  --n-bg-color : #262626;
+  --n-text-color : white;
+  --sa-title-color : white;
+  --sa-text-color : white;
+  --sa-bg-color : #333333;
+}
+
+/*---Body---*/
+body {
+  /* Pour afficher les bordures */
+  /*border: 10px solid #2874a6;
+  border-radius: 20px; */
+  margin: 0 20% 0 20%;
+  height: auto;
+  background-color: var(--sa-bg-color);
+}
+
+/*---Titres---*/
+h1{
+  margin: 20px;
+  border: 5px solid #800000;
+  color: var(--sa-title-color);
+  font-style: italic;
+  text-align: center;
+  font-size: 3em;
+}
+
+h2 {
+  margin: 20px;
+  padding: 5px;
+  border: 5px solid #800000;
+  border-radius: 10px;
+  color: var(--sa-title-color);
+  width: auto;
+}
+
+/*---Présentation---*/
+/*#maPhoto {
+  float: right;
+  height: 75px;
+  width: 75px;
+  margin-right: 20px;
+}*/
+
+.input_control input {
+  width: 18px;
+  height:18px;
+  margin: 2px;
+}
+
+.input_control input:hover {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+}
+
+/*---Classes surbrillance et encadrement---*/
+
+.surbrillanceOff{
+  background-color: var(--sa-bg-color);
+}
+
+.surbrillanceOn{
+  background-color: #2874a6;
+}
+
+.contourOff {
+  border: 5px solid var(--sa-bg-color);
+  border-radius: 20px;
+}
+
+.contourOn {
+  border: 5px solid #2874a6;
+  border-radius: 20px;
+}
+
+div.presentation h4 {
+  color: var(--sa-text-color);
+  margin-left: 20px;
+}
+
+div.icones img {
+  float: left;
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+}
+
+div.presentation p {
+  color: var(--sa-text-color);
+  font-style: italic;
+  margin-left: 25px;
+}
+
+#lecteur_video {
+  width: 100px;
+  border: 1px solid black;
+  margin: 20px;
+}
+
+#video {
+  width: 100%;
+}
+
+/*---Tableaux---*/
+table, th, td {
+  margin-left: 20px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+ th, td {
+   color: var(--sa-text-color);
+   padding: 4px;
+ }
+
+ tr:nth-child(even) {
+  background-color: var(--hf-bg-color);
+}
+
+td.date {
+  font-weight: bold;
+  color: var(--sa-text-color);
+}
+
+#table1 {
+  width: auto;
+}
+
+#table2 {
+  width: auto;
+  margin: 20px;
+  text-align: center;
+}
+
+#table3 {
+  width: auto;
+  margin: 20px;
+  text-align: center;
+}
+
+/*---Couleurs des langages HTML---*/
+#texte_blanc{
+  color: var(--hf-text-color);
+}
+
+ #html {
+   color: #0044cc;
+   text-align: center;
+ }
+
+ #css {
+   color: #29a329;
+   text-align: center;
+ }
+
+ #javaScript {
+   color: #cccc00;
+   text-align: center;
+ }
+
+ #php {
+   color: #cc2900;
+   text-align: center;
+ }
+
+ #baseDeDonnee {
+   color: var(--hf-text-color);
+   text-align: center;
+ }
+
+ #lamp {
+   text-align: center;
+ }
+
+/*---Listes---*/
+ol, ul{
+  color: var(--sa-text-color);
+}
+
+#loisirs {
+  margin: 25px;
+  padding: 0;
+}
+
+ #loisirs li{
+   display: inline;
+ }
+
+/*---Footer--*/
+footer {
+  display: inline;
+  border-radius: 10px;
+  padding: 0 0 20px 18px;
+  font-size: 3em;
+  width: 10%;
+}
+
+ footer a {
+   display: inline;
+   margin: 5px;
+   padding:0;
+   font-size: 20px;
+   font-weight: 100;
+   color: var(--sa-text-color);
+   text-decoration: none;
+ }
+
+ footer a:hover {
+   border-bottom: 2px solid var(--sa-text-color);
+   transition-duration: 0.3s;
+ }
+
+ #dark_light {
+   padding: 12px 20px;
+   border: 1px solid white;
+   border-radius: 10px;
+   background-color: var(--n-bg-color);
+   color: white;
+ }
+
+ /*---Grille pour mes formations et mes exp pro---*/
+ div.grille {
+   display: grid;
+   grid-template-columns: 50% 50%;
+   grid-template-rows: auto;
+   grid-template-areas : "gauche droite";
+ }
+
+ #gridArea1 {
+   grid-area: gauche;
+ }
+
+ #gridArea2 {
+   grid-area: droite;
+ }
+
+/*Zone réservée pour les écrans inférieurs à 800px de large*/
+ @media (max-width: 800px) {
+
+   div.grille {
+     display: grid;
+     grid-template-columns: 100%;
+     grid-template-rows: auto auto;
+     grid-template-areas: "gauche"
+                          "droite";
+   }
+ }
