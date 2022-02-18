@@ -11,7 +11,7 @@
 
   <body id ="body" data-theme="light">
     <h1>Identifiez-vous !</h1>
-    <form action="PHP\rest.php" method="post">
+    <form action="rest.php" method="post">
       <label for="nom">Nom :</label>
       <input type="text" id="nom" name="nom" required>
       <label for="prenom">Prénom :</label>
@@ -38,7 +38,7 @@
     </form>
 
     <footer>
-      <a href="index.html">Page principale</a>
+      <a href="index.php">Page principale</a>
       <button type="button" id="dark_light">Mode sombre</button>
     </footer>
 
@@ -46,3 +46,16 @@
   <script src="JS\formulaire.js"></script>
   <script src="JS\dark_light.js"></script>
 </html>
+
+<?php
+	if(isset($_GET['erreur']))
+	{
+		echo "<script language=\"javascript\">";
+		echo "alert('Le pseudo est déja utilisé !')";
+		echo "</script>";
+	}
+  if(isset($_COOKIE['pseudo']))
+  {
+    header('Location:index.php');
+  }
+?>

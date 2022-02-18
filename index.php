@@ -23,12 +23,26 @@
       <div>
         <a href="#">Suivi</a>
       </div>
-      <div>
-        <a href="formulaire_connexion.html">Connexion</a>
-      </div>
-      <div>
-        <a href="formulaire_inscription.html">Inscription</a>
-      </div>
+      <?php
+        if(isset($_COOKIE['pseudo']))
+        {
+          echo '<div>
+          <a href="formulaire_profil.php">Profil</a>
+          </div>';
+          echo '<div>
+          <a href="rest.php?deconnexion">Deconnexion</a>
+          </div>';
+        }
+        else
+        {
+          echo '<div>
+          <a href="formulaire_connexion.php">Connexion</a>
+          </div>';
+          echo '<div>
+          <a href="formulaire_inscription.php">Inscription</a>
+          </div>';
+        }
+      ?>
     </nav>
 
     <aside>

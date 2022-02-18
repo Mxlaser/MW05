@@ -11,7 +11,7 @@
 
   <body id ="body" data-theme="light">
     <h1>Identifiez-vous !</h1>
-    <form action="PHP\rest.php" method="post">
+    <form action="rest.php" method="post">
       <label for="pseudo">Pseudo :</label>
       <input type="text" id="pseudo" name="pseudo_Utilisateur" required>
       <label for="passe">Mot de passe :</label>
@@ -20,11 +20,24 @@
     </form>
 
     <footer>
-      <a href="formulaire_inscription.html">Formulaire d'inscription</a>
-      <a href="index.html">Page principale</a>
+      <a href="formulaire_inscription.php">Formulaire d'inscription</a>
+      <a href="index.php">Page principale</a>
       <button type="button" id="dark_light">Mode sombre</button>
     </footer>
 
   </body>
   <script src="JS\dark_light.js"></script>
 </html>
+
+<?php
+	if(isset($_GET['erreur']))
+	{
+		echo "<script language=\"javascript\">";
+		echo "alert('Une erreur de connexion est survenue !')";
+		echo "</script>";
+	}
+  if(isset($_COOKIE['pseudo']))
+  {
+    header('Location:index.php');
+  }
+?>
